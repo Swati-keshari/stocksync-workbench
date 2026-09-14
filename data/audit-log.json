@@ -1,0 +1,10 @@
+[
+  { "id": "a_01", "time": "2026-09-12T14:20:00Z", "actor": "Priya Nair", "action": "accept_source", "sku": "BRW-6402", "detail": "Accepted POS (44 units) as source of truth over WMS (52 units).", "outcome": "resolved" },
+  { "id": "a_02", "time": "2026-09-12T13:58:00Z", "actor": "Priya Nair", "action": "manual_count", "sku": "BRW-9920", "detail": "Requested manual physical count at Warehouse B.", "outcome": "pending" },
+  { "id": "a_03", "time": "2026-09-12T12:15:00Z", "actor": "Marcus Owusu", "action": "bulk_resolve", "sku": "12 items", "detail": "Bulk-accepted POS as source of truth for 12 low-variance items.", "outcome": "resolved" },
+  { "id": "a_04", "time": "2026-09-12T11:40:00Z", "actor": "System", "action": "auto_resolve", "sku": "BRW-1204", "detail": "Auto-resolved: variance dropped below 2% threshold on next sync.", "outcome": "resolved" },
+  { "id": "a_05", "time": "2026-09-11T17:05:00Z", "actor": "Priya Nair", "action": "resolve_item", "sku": "BRW-7743", "detail": "Manually resolved after confirming warehouse receiving error.", "outcome": "resolved" },
+  { "id": "a_06", "time": "2026-09-11T15:22:00Z", "actor": "Marcus Owusu", "action": "reject_source", "sku": "BRW-3305", "detail": "Rejected E-commerce quantity — flagged for data entry review.", "outcome": "flagged" },
+  { "id": "a_07", "time": "2026-09-11T10:03:00Z", "actor": "System", "action": "sync_retry", "sku": "—", "detail": "E-commerce Platform sync retried automatically after timeout; succeeded on attempt 2.", "outcome": "resolved" },
+  { "id": "a_08", "time": "2026-09-10T16:47:00Z", "actor": "Priya Nair", "action": "manual_count", "sku": "BRW-4421", "detail": "Manual count confirmed WMS overcount; corrected to 8 units.", "outcome": "resolved" }
+]

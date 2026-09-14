@@ -1,0 +1,10 @@
+[
+  { "id": "n_01", "type": "critical", "title": "Critical variance detected", "message": "BRW-1042 (Ceramic Pour-Over Dripper) shows a 38.6% variance between WMS and POS.", "time": "2026-09-12T14:52:00Z", "read": false, "itemId": "rec_001" },
+  { "id": "n_02", "type": "warning", "title": "Source degraded", "message": "Warehouse (WMS) sync latency has climbed to 2.1s — investigate connection.", "time": "2026-09-12T14:41:00Z", "read": false },
+  { "id": "n_03", "type": "success", "title": "Backfill milestone", "message": "Backfill for Warehouse (WMS) has processed 25,000 of 42,000 records.", "time": "2026-09-12T14:38:00Z", "read": false },
+  { "id": "n_04", "type": "info", "title": "Item resolved", "message": "BRW-6402 was resolved by Priya Nair — accepted POS as source of truth.", "time": "2026-09-12T14:20:00Z", "read": true },
+  { "id": "n_05", "type": "warning", "title": "Manual count requested", "message": "A manual count was requested for BRW-9920 (Espresso Tamper 58mm) at Warehouse B.", "time": "2026-09-12T13:58:00Z", "read": true, "itemId": "rec_011" },
+  { "id": "n_06", "type": "critical", "title": "Sync failure", "message": "E-commerce Platform sync failed at 13:40 — retried automatically and recovered.", "time": "2026-09-12T13:40:00Z", "read": true },
+  { "id": "n_07", "type": "info", "title": "Bulk action completed", "message": "12 low-variance items were bulk-accepted using POS as source of truth.", "time": "2026-09-12T12:15:00Z", "read": true },
+  { "id": "n_08", "type": "success", "title": "Data quality improved", "message": "Data quality score rose from 87 to 91 following yesterday's reconciliation pass.", "time": "2026-09-12T09:02:00Z", "read": true }
+]

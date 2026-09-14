@@ -1,0 +1,312 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root,
+[data-theme="light"] {
+  --bg: #f3efe4;
+  --surface: #fffaf1;
+  --surface-alt: #e8e1d1;
+  --border: #d4cbb6;
+  --text-primary: #16241d;
+  --text-secondary: #5c685f;
+  --primary: #1e5c45;
+  --primary-hover: #154534;
+  --row-highlight: rgba(30, 92, 69, 0.12);
+  --brass: #b8923a;
+  --ink-soft: #2c3d34;
+
+  --status-low: #1e5c45;
+  --status-medium: #b8923a;
+  --status-high: #c45c26;
+  --status-critical: #b42318;
+
+  --primary-rgb: 30 92 69;
+  --status-low-rgb: 30 92 69;
+  --status-medium-rgb: 184 146 58;
+  --status-high-rgb: 196 92 38;
+  --status-critical-rgb: 180 35 24;
+}
+
+[data-theme="dark"] {
+  --bg: #0e1713;
+  --surface: #15211b;
+  --surface-alt: #1c2c24;
+  --border: #2d4238;
+  --text-primary: #f3efe4;
+  --text-secondary: #a8b4ac;
+  --primary: #7dba9a;
+  --primary-hover: #9dcfb4;
+  --row-highlight: rgba(125, 186, 154, 0.16);
+  --brass: #d4b15a;
+  --ink-soft: #c5d1ca;
+
+  --status-low: #7dba9a;
+  --status-medium: #d4b15a;
+  --status-high: #e08a5a;
+  --status-critical: #f07167;
+
+  --primary-rgb: 125 186 154;
+  --status-low-rgb: 125 186 154;
+  --status-medium-rgb: 212 177 90;
+  --status-high-rgb: 224 138 90;
+  --status-critical-rgb: 240 113 103;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+::selection {
+  background: rgba(184, 146, 58, 0.28);
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--surface),
+    0 0 0 4px var(--primary);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
+
+.tabular-nums {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- Motion artifacts (honor reduced-motion below) --- */
+@keyframes ledger-pulse {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+}
+@keyframes conveyor {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes scan {
+  0% {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(220%);
+    opacity: 0;
+  }
+}
+@keyframes tally {
+  0%,
+  40% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  60%,
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes shelf {
+  from {
+    width: 8%;
+  }
+  to {
+    width: var(--fill, 72%);
+  }
+}
+@keyframes ink-draw {
+  from {
+    stroke-dashoffset: 240;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+@keyframes live-dot {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.45;
+  }
+}
+@keyframes path-dash {
+  to {
+    stroke-dashoffset: -28;
+  }
+}
+@keyframes stamp {
+  0% {
+    transform: scale(1.4) rotate(-8deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(0.96) rotate(1deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0);
+    opacity: 1;
+  }
+}
+@keyframes count-flip {
+  0% {
+    transform: rotateX(0);
+  }
+  40% {
+    transform: rotateX(-90deg);
+  }
+  41% {
+    transform: rotateX(90deg);
+  }
+  80%,
+  100% {
+    transform: rotateX(0);
+  }
+}
+
+.artifact-pulse {
+  animation: ledger-pulse 2.4s ease-out infinite;
+}
+.artifact-conveyor {
+  animation: conveyor 28s linear infinite;
+}
+.artifact-scan {
+  animation: scan 3.2s ease-in-out infinite;
+}
+.artifact-tally {
+  animation: tally 2.8s ease-in-out infinite;
+}
+.artifact-orbit {
+  animation: orbit 18s linear infinite;
+}
+.artifact-shelf {
+  animation: shelf 1.6s ease-out both;
+}
+.artifact-ink {
+  stroke-dasharray: 240;
+  animation: ink-draw 1.4s ease-out both;
+}
+.artifact-float {
+  animation: float-y 4.5s ease-in-out infinite;
+}
+.artifact-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(184, 146, 58, 0.22), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2.2s linear infinite;
+}
+.artifact-live {
+  animation: live-dot 1.6s ease-in-out infinite;
+}
+.artifact-path {
+  stroke-dasharray: 6 6;
+  animation: path-dash 1s linear infinite;
+}
+.artifact-stamp {
+  animation: stamp 0.7s cubic-bezier(0.2, 0.9, 0.2, 1) both;
+}
+.artifact-flip {
+  animation: count-flip 2.4s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.ag-theme-stocksync {
+  --ag-background-color: var(--surface);
+  --ag-header-background-color: var(--surface-alt);
+  --ag-odd-row-background-color: var(--surface);
+  --ag-row-hover-color: var(--row-highlight);
+  --ag-border-color: var(--border);
+  --ag-header-foreground-color: var(--text-secondary);
+  --ag-foreground-color: var(--text-primary);
+  --ag-font-family: var(--font-sans), system-ui, sans-serif;
+  --ag-font-size: 13px;
+  --ag-header-height: 40px;
+  --ag-row-height: 44px;
+  --ag-selected-row-background-color: var(--row-highlight);
+  --ag-range-selection-border-color: var(--primary);
+  --ag-checkbox-checked-color: var(--primary);
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "pos",
+    "name": "Shop till",
+    "vendor": "Cash counter",
+    "kind": "Each sale ticks one off",
+    "status": "connected",
+    "lastSync": "2026-09-12T14:58:00Z",
+    "latencyMs": 340,
+    "recordsSynced": 18420,
+    "connected": true,
+    "apiKeyMasked": "lsr_live_••••••••••••7f2a",
+    "webhookUrl": "https://hooks.stocksync.io/in/pos-lightspeed",
+    "syncFrequencyMinutes": 5,
+    "rateLimitPerMinute": 120,
+    "scopes": ["inventory:read", "sales:read"]
+  },
+  {
+    "id": "wms",
+    "name": "Storeroom",
+    "vendor": "Back room shelves",
+    "kind": "Staff count boxes they can see",
+    "status": "degraded",
+    "lastSync": "2026-09-12T14:41:00Z",
+    "latencyMs": 2150,
+    "recordsSynced": 9310,
+    "connected": true,
+    "apiKeyMasked": "fw_prod_••••••••••••c103",
+    "webhookUrl": "https://hooks.stocksync.io/in/wms-fulfil",
+    "syncFrequencyMinutes": 10,
+    "rateLimitPerMinute": 60,
+    "scopes": ["inventory:read", "inventory:write", "receiving:read"]
+  },
+  {
+    "id": "ecom",
+    "name": "Website",
+    "vendor": "Online shop",
+    "kind": "Shows what a customer can buy",
+    "status": "connected",
+    "lastSync": "2026-09-12T14:59:10Z",
+    "latencyMs": 210,
+    "recordsSynced": 21980,
+    "connected": true,
+    "apiKeyMasked": "shpat_••••••••••••9e41",
+    "webhookUrl": "https://hooks.stocksync.io/in/ecom-shopify",
+    "syncFrequencyMinutes": 2,
+    "rateLimitPerMinute": 240,
+    "scopes": ["inventory:read", "orders:read"]
+  }
+]

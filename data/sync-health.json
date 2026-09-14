@@ -1,0 +1,19 @@
+{
+  "dataQualityScore": 91,
+  "dataQualityTrend": 2.4,
+  "pendingItems": {
+    "total": 16,
+    "critical": 5,
+    "high": 6,
+    "medium": 1,
+    "low": 4
+  },
+  "activity": {
+    "labels": ["09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00"],
+    "series": [
+      { "name": "Records synced", "data": [1120, 1340, 1290, 1510, 1470, 1605, 1380] },
+      { "name": "Variances found", "data": [18, 22, 14, 31, 27, 19, 24] }
+    ]
+  },
+  "latencySeconds": 4.2
+}
